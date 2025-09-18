@@ -18,21 +18,21 @@ class TurtleController(Node):
 
     def get_twist_msg(self):
         if self.time < 3:
-            msg = self.create_twist(2.0,0.0)
+            msg = self.create_twist(2.0,0.0) # create longer line
         elif self.time >= 3 and self.time < 5:
-            msg = self.create_twist(0.0, 1.5708)
+            msg = self.create_twist(0.0, 1.5708) # turn 90 degrees
         elif self.time >= 5 and self.time < 8:
-            msg = self.create_twist(1.0, 0.0)
+            msg = self.create_twist(1.0, 0.0) # create shorter line
         elif self.time >= 8 and self.time < 10:
-            msg = self.create_twist(0.0, 1.5708)
+            msg = self.create_twist(0.0, 1.5708) # turn 90 degrees
         elif self.time >= 10 and self.time < 13:
-            msg = self.create_twist(2.0,0.0)
+            msg = self.create_twist(2.0,0.0) # create 2nd longer line
         elif self.time >= 13 and self.time < 15:
-            msg = self.create_twist(0.0, 1.5708)
+            msg = self.create_twist(0.0, 1.5708) # turn 90 degrees
         elif self.time >= 15 and self.time < 18:
-            msg = self.create_twist(1.0, 0.0)
+            msg = self.create_twist(1.0, 0.0) # create 2nd shorter line
         else:
-            msg = self.create_twist(0.0, 0.0)
+            msg = self.create_twist(0.0, 0.0) # stop moving once shape is created
         return msg
     
     def timer_callback(self):
