@@ -18,13 +18,13 @@ class TurtleController(Node):
 
     def get_twist_msg(self):
         if self.time < 1:
-            msg = self.create_twist(0.0,0.0)
+            msg = self.create_twist(0.0,0.0) # sit still for a second, rotation used at first for debugging purposes but now not needed
         elif self.time % 2 == 1 and self.time < 20:
-            msg = self.create_twist(3.0, 0.0)
+            msg = self.create_twist(3.0, 0.0) # draw straight line
         elif self.time % 2 == 0 and self.time <20:
-            msg = self.create_twist(0.0, 3.770)
+            msg = self.create_twist(0.0, 3.770) # rotate about 216 degrees, this is what produces the sunflower petals
         else:
-            msg = self.create_twist(0.0, 0.0)
+            msg = self.create_twist(0.0, 0.0) # stop moving once shape is done being created
         return msg
     
     def timer_callback(self):
